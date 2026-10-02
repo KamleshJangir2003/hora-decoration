@@ -2,6 +2,9 @@ const fs = require('fs');
 const path = require('path');
 
 const base = 'https://www.horaballoondecor.com';
+
+const lastmod = new Date().toISOString().slice(0, 10);
+
 const routes = [
   ['/', 1.0],
   ['/city/jaipur', 0.9],
@@ -87,7 +90,7 @@ const routes = [
 ];
 
 const entries = routes.map(([route, priority]) =>
-  `  <url><loc>${base}${route}</loc><priority>${priority.toFixed(1)}</priority></url>`
+  `  <url><loc>${base}${route}</loc><lastmod>${lastmod}</lastmod><priority>${priority.toFixed(1)}</priority></url>`
 );
 const xml = [
   '<?xml version="1.0" encoding="UTF-8"?>',
