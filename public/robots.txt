@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://theballoonatelier.in/sitemap.xml
+Sitemap: https://www.horaballoondecor.com/sitemap.xml

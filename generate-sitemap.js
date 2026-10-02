@@ -1,6 +1,7 @@
 const fs = require('fs');
+const path = require('path');
 
-const base = 'https://theballoonatelier.in';
+const base = 'https://www.horaballoondecor.com';
 const lastmod = new Date().toISOString().slice(0, 10);
 const routes = [
   ['/', 1.0],
@@ -20,42 +21,20 @@ const routes = [
   ['/areas/sodala/', 0.8],
   ['/areas/vidhyadhar-nagar/', 0.8],
   ['/areas/civil-lines/', 0.8],
-  ['/decorations/birthday', 0.9],
-  ['/decorations/balloon', 0.9],
-  ['/decorations/anniversary', 0.9],
-  ['/decorations/baby-shower', 0.9],
-  ['/decorations/wedding', 0.8],
-  ['/decorations/birthday-balloon-decoration', 0.8],
-  ['/decorations/1st-birthday-decor', 0.8],
-  ['/decorations/kids-birthday-themes', 0.8],
-  ['/decorations/birthday-balloon-arch', 0.8],
-  ['/decorations/birthday-party-backdrops', 0.8],
-  ['/decorations/balloon-arches', 0.8],
-  ['/decorations/organic-balloon-decor', 0.8],
-  ['/decorations/number-balloons', 0.8],
-  ['/decorations/balloon-backdrops', 0.8],
-  ['/decorations/romantic-room-decoration', 0.8],
-  ['/decorations/anniversary-balloon-decor', 0.8],
-  ['/decorations/candlelight-setup', 0.8],
-  ['/decorations/proposal-decoration', 0.8],
-  ['/decorations/surprise-decoration', 0.8],
-  ['/decorations/baby-shower-decor', 0.8],
-  ['/decorations/newborn-welcome', 0.8],
-  ['/decorations/naming-ceremony', 0.7],
-  ['/decorations/kids-theme-decor', 0.8],
-  ['/decorations/first-birthday', 0.8],
-  ['/decorations/engagement-decoration', 0.8],
-  ['/decorations/haldi-decoration', 0.8],
-  ['/decorations/mehendi-decoration', 0.7],
-  ['/decorations/wedding-backdrops', 0.8],
-  ['/canopy-decorations', 0.8],
-  ['/car-boot-decorations', 0.8],
+  ['/birthday-decorations', 0.9],
+  ['/kids-theme-decorations', 0.9],
+  ['/baby-welcome-decorations', 0.9],
+  ['/baby-shower-decorations', 0.9],
+  ['/anniversary-decorations', 0.9],
+  ['/party-decorations', 0.8],
+  ['/haldi-decorations', 0.8],
+  ['/room-decorations', 0.8],
+  ['/balloon-bouquets', 0.8],
   ['/candle-light-dinner', 0.8],
   ['/flower-decorations', 0.7],
+  ['/office-decorations', 0.7],
   ['/premium-decorations', 0.7],
   ['/terrace-decorations', 0.7],
-  ['/party-decorations', 0.7],
-  ['/office-decorations', 0.7],
   ['/housewarming-decorations', 0.7],
   ['/congratulation-decorations', 0.7],
   ['/retirement-decorations', 0.7],
@@ -68,12 +47,18 @@ const routes = [
   ['/guruji-decorations', 0.7],
   ['/bachelorette-decoration', 0.7],
   ['/ceremony-decorations', 0.7],
+  ['/canopy-decorations', 0.8],
+  ['/proposal-decorations', 0.8],
+  ['/car-boot-decorations', 0.8],
   ['/contact', 0.6],
   ['/about', 0.6],
+  ['/privacy-policy', 0.6],
+  ['/terms', 0.6],
+  ['/cancellation-policy', 0.6],
 ];
 
-const entries = routes.map(([path, priority]) =>
-  `  <url><loc>${base}${path}</loc><lastmod>${lastmod}</lastmod><priority>${priority.toFixed(1)}</priority></url>`
+const entries = routes.map(([route, priority]) =>
+  `  <url><loc>${base}${route}</loc><lastmod>${lastmod}</lastmod><priority>${priority.toFixed(1)}</priority></url>`
 );
 const xml = [
   '<?xml version="1.0" encoding="UTF-8"?>',
@@ -83,5 +68,7 @@ const xml = [
   '',
 ].join('\n');
 
-fs.writeFileSync('public/sitemap.xml', xml, 'utf8');
+const publicDir = path.join(__dirname, 'public');
+fs.mkdirSync(publicDir, { recursive: true });
+fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), xml, 'utf8');
 console.log(`sitemap.xml created with ${routes.length} URLs`);
