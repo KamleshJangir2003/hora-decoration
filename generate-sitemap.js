@@ -2,7 +2,6 @@ const fs = require('fs');
 const path = require('path');
 
 const base = 'https://www.horaballoondecor.com';
-const lastmod = new Date().toISOString().slice(0, 10);
 const routes = [
   ['/', 1.0],
   ['/city/jaipur', 0.9],
@@ -21,12 +20,42 @@ const routes = [
   ['/areas/sodala/', 0.8],
   ['/areas/vidhyadhar-nagar/', 0.8],
   ['/areas/civil-lines/', 0.8],
+  ['/decorations/birthday', 0.9],
+  ['/decorations/birthday-balloon-decoration', 0.9],
+  ['/decorations/1st-birthday-decor', 0.9],
+  ['/decorations/kids-birthday-themes', 0.9],
+  ['/decorations/birthday-balloon-arch', 0.8],
+  ['/decorations/birthday-party-backdrops', 0.8],
+  ['/decorations/balloon', 0.9],
+  ['/decorations/balloon-arches', 0.8],
+  ['/decorations/balloon-bouquets', 0.8],
+  ['/decorations/organic-balloon-decor', 0.8],
+  ['/decorations/number-balloons', 0.8],
+  ['/decorations/balloon-backdrops', 0.8],
+  ['/decorations/anniversary', 0.9],
+  ['/decorations/romantic-room-decoration', 0.8],
+  ['/decorations/anniversary-balloon-decor', 0.8],
+  ['/decorations/candlelight-setup', 0.8],
+  ['/decorations/proposal-decoration', 0.8],
+  ['/decorations/surprise-decoration', 0.8],
+  ['/decorations/baby-shower', 0.9],
+  ['/decorations/baby-shower-decor', 0.8],
+  ['/decorations/newborn-welcome', 0.8],
+  ['/decorations/naming-ceremony', 0.8],
+  ['/decorations/kids-theme-decor', 0.8],
+  ['/decorations/first-birthday', 0.8],
+  ['/decorations/wedding', 0.8],
+  ['/decorations/engagement-decoration', 0.8],
+  ['/decorations/haldi-decoration', 0.8],
+  ['/decorations/mehendi-decoration', 0.8],
+  ['/decorations/wedding-backdrops', 0.8],
   ['/birthday-decorations', 0.9],
   ['/kids-theme-decorations', 0.9],
   ['/baby-welcome-decorations', 0.9],
   ['/baby-shower-decorations', 0.9],
   ['/anniversary-decorations', 0.9],
   ['/party-decorations', 0.8],
+  ['/stage-decorations', 0.8],
   ['/haldi-decorations', 0.8],
   ['/room-decorations', 0.8],
   ['/balloon-bouquets', 0.8],
@@ -58,7 +87,7 @@ const routes = [
 ];
 
 const entries = routes.map(([route, priority]) =>
-  `  <url><loc>${base}${route}</loc><lastmod>${lastmod}</lastmod><priority>${priority.toFixed(1)}</priority></url>`
+  `  <url><loc>${base}${route}</loc><priority>${priority.toFixed(1)}</priority></url>`
 );
 const xml = [
   '<?xml version="1.0" encoding="UTF-8"?>',
