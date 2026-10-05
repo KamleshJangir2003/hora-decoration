@@ -788,7 +788,7 @@ function AreaLanding(){
     }
     return null;
   }).filter(Boolean);
-  const canonical=`${DOMAIN}/areas/${area.slug}/`;
+  const canonical=`${DOMAIN}/areas/${area.slug}`;
   const questions=area.faqs.map(([question,answer])=>({'@type':'Question',name:question,acceptedAnswer:{'@type':'Answer',text:answer}}));
   const schema={'@context':'https://schema.org','@graph':[
     {'@type':'Service','@id':canonical+'#service',name:`Balloon Decoration in ${area.name}, Jaipur`,serviceType:'Balloon and event decoration',areaServed:{'@type':'Place',name:`${area.name}, Jaipur`},provider:{'@id':DOMAIN+'/#business'},url:canonical},
