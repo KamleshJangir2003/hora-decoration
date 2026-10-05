@@ -962,3 +962,7 @@
 @media (min-width: 901px){.hero{background-image:linear-gradient(105deg,#1c0f22f5 0%,#2b1640e8 32%,#3a1a50a0 55%,#2a103800 80%),url('https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=1800&q=80')}}
 @media (max-width: 900px){.hero{background-image:linear-gradient(105deg,#1c0f22f5 0%,#2b1640e8 32%,#3a1a50a0 55%,#2a103800 80%),url('https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=1400&q=80')}}
 @media (max-width: 480px){.hero{background-image:linear-gradient(160deg,rgba(28,15,34,.92) 0%,rgba(43,22,64,.85) 45%,rgba(58,26,80,.6) 75%,rgba(42,16,56,.3) 100%),url('https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=900&q=80')}}
+.hero h1{color:#fff;}
+.hero h1 i{color:#ffcce0;}
+.hero .heroEyebrow{color:#f0d8ff!important;opacity:1;}
+.hero .heroDesc{color:#e8d8f0!important;}
