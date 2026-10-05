@@ -1,3 +1,51 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/birthday-decorations",
+      "destination": "/decorations/birthday",
+      "permanent": true
+    },
+    {
+      "source": "/kids-theme-decorations",
+      "destination": "/decorations/kids-theme-decor",
+      "permanent": true
+    },
+    {
+      "source": "/baby-welcome-decorations",
+      "destination": "/decorations/newborn-welcome",
+      "permanent": true
+    },
+    {
+      "source": "/baby-shower-decorations",
+      "destination": "/decorations/baby-shower",
+      "permanent": true
+    },
+    {
+      "source": "/haldi-decorations",
+      "destination": "/decorations/haldi-decoration",
+      "permanent": true
+    },
+    {
+      "source": "/anniversary-decorations",
+      "destination": "/decorations/anniversary",
+      "permanent": true
+    },
+    {
+      "source": "/room-decorations",
+      "destination": "/decorations/romantic-room-decoration",
+      "permanent": true
+    },
+    {
+      "source": "/balloon-bouquets",
+      "destination": "/decorations/balloon",
+      "permanent": true
+    },
+    {
+      "source": "/proposal-decorations",
+      "destination": "/decorations/proposal-decoration",
+      "permanent": true
+    }
+  ]
 }
